@@ -1,14 +1,11 @@
 /**
   @file municipality.cpp
   @author Alex Clarke
-  @version 1.0
+  @version 0.1
   
-  @class Municipality
-  @brief Class storing information about a city for a given measure.
-
-  The information stored is the city name, population, number of households,
-  geographic area, population density,
-  and a list of year objects containing the measure's data in a specific year in this city.
+  @section DESCRIPTION
+  
+  Class storing information about a city for a given measure
   */
 
 #include "municipality.h"

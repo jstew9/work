@@ -1,7 +1,7 @@
 /**
   @file widgetbarchart.h
   @author Alex Clarke, Melanie Imough, Jen Stewart
-  @version 1.0
+  @version 0.1
 
   @section DESCRIPTION
 
@@ -30,6 +30,8 @@ public:
     widgetBarChart(QWidget *parent, const Measure &meas,const std::pair<double,double> &range);
     ~widgetBarChart();
     
+    void drawChartDefault();
+
 private slots:
 
     void on_listBarChartMunicipality_itemSelectionChanged();
@@ -37,6 +39,24 @@ private slots:
     void on_radioButtonMeanAllDataBar_toggled(bool checked);
     void on_pushButtonRefresh_clicked();
     void on_pushButtonSaveBarData_clicked();
+
+    void titleDoubleClick(QMouseEvent* event, QCPPlotTitle* title);
+    void axisLabelDoubleClick(QCPAxis *axis, QCPAxis::SelectablePart part);
+    void legendDoubleClick(QCPLegend *legend, QCPAbstractLegendItem *item);
+    void selectionChanged();
+    void mousePress();
+    void mouseWheel();
+    void contextMenuRequest(QPoint pos);
+    void selectImageBackground();
+    void selectImageAxisBackground();
+    void changeLegendColor();
+    void changeColorLine();
+    void changeAxisColor();
+    void changeBackgroundColor();
+    void moveLegend();
+
+signals:
+    void plottableClick(QCPAbstractPlottable*,QMouseEvent*);
 
 private:
     void drawChart();

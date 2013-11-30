@@ -3,8 +3,9 @@
  * @author  Melanie Imough
  * @version 1.0
  *
- * @class Main
- * @brief This class create the GUI.
+ * @section DESCRIPTION
+ *
+ * This class create the GUI.
  */
 
 #include <QApplication>

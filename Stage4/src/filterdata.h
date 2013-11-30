@@ -1,7 +1,7 @@
 /**
   @file filterdata.h
   @author Alex Clarke, Jamie Finnigan
-  @version 1.0
+  @version 0.1
 
   @section DESCRIPTION
 
@@ -35,8 +35,6 @@ public:
     //void loadPreferences();
     //bool savePreferences();
     //void saveImage();
-    QVector<QString> &loadTemplate(QFile &file);
-    void saveTemplate(const QVector<QString> &prefs, QFile& file);
     void addYear(const QString &skey, const QString &mkey, const QString &mukey, Year &year);
     void addMuni(const QString &skey, const QString &mkey,const Municipality &muni);
     void addMeasure(const QString &skey,const Measure &measure);

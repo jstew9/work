@@ -1,50 +1,31 @@
 /**
   @file filterdata.h
   @author Alex Clarke, Jamie Finnigan
-  @version 1.0
+  @version 0.1
 
-  @class FilterData
-  @brief Data and database handler
+  @section DESCRIPTION
 
-
+  Class for the data handler
 
   */
 #include "filterdata.h"
 #include <QFile>
 #include <QTextStream>
 
-/**
- * @brief FilterData::FilterData Default constructor that takes data from the database and creates the rest of the data objects.
- * Uses default data.
- */
 FilterData::FilterData(): _data(new Data()), _db(new QSqlDatabase())
 {
     initDatabase();
     generateServices();
 }
 
-/**
- * @brief FilterData::FilterData Constructor utelizing an existing data structure.
- * No database connection needed.
- * @param data An existing data object
- */
 FilterData::FilterData(const Data &data): _data(new Data(data)), _db(new QSqlDatabase())
 {
 }
 
-/**
- * @brief FilterData::FilterData Copy Constructor
- * @param param The FilterData object to be constructed from.
- */
 FilterData::FilterData(const FilterData &param): _data(new Data(*param._data)),_db(new QSqlDatabase(*param._db))
 {
 }
 
-/**
- * @brief FilterData::operator = Assignment Operator
- * @param param existing FilterData to be copied from
- * @return A new, identical FilterData object.
- */
 FilterData &FilterData::operator =(const FilterData &param)
 {
     if(this != &param) {
@@ -57,9 +38,6 @@ FilterData &FilterData::operator =(const FilterData &param)
     }
     return *this;
 }
-/**
- * @brief FilterData destructor.
- */
 
 FilterData::~FilterData()
 {
@@ -67,35 +45,6 @@ FilterData::~FilterData()
     _db->close();
     delete _db;
 
-}
-/**
- * @brief FilterData::loadTemplate Load a template in from file
- * @param file the file to load
- * @return the filers in string format
- */
-QVector<QString> &FilterData::loadTemplate(QFile &file)
-{
-    //if(!file.open(QIODevice::ReadOnly | QIODevice::Text))return;
-
-    QVector<QString> results;
-
-    QTextStream in(&file);
-
-    while(!in.atEnd()) {
-        results.append(in.readLine());
-    }
-
-    return results;
-
-}
-/**
- * @brief FilterData::saveTemplate save a template (see saveTable)
- * @param prefs the list of preferences
- * @param file the file to save to
- */
-void FilterData::saveTemplate(const QVector<QString> &prefs, QFile &file)
-{
-    saveTable(prefs,file);
 }
 
 void FilterData::addYear(const QString &skey, const QString &mkey, const QString &mukey,Year &year)
@@ -105,11 +54,10 @@ void FilterData::addYear(const QString &skey, const QString &mkey, const QString
 }
 
 /**
- * @brief Obtain a measure from the database.
  *
- * @param servType - a string containing the service type name
- * @param measure - a string with the measure name
- * @return The measure if it was found.
+ * @param servType
+ * @param measure
+ * @return
  */
 Measure &FilterData::loadMeasure(const QString &servType, const QString &measure)
 {
@@ -117,7 +65,7 @@ Measure &FilterData::loadMeasure(const QString &servType, const QString &measure
 
 }
 /**
- * Save a table to disk
+ * save a table to disk
  * @param table the table to save
  * @param file the file to save to
  */
@@ -193,10 +141,9 @@ void FilterData::parseMeasures(QString mID, QString sID){
             y->setYear(query.value(2).toString());
             y->setValue(query.value(3).toDouble());
             _data->findService(sID).findMeasure(mID).findMuni(m->name()).addYear(*y);
-
+            emit resultReady(_data->findService(sID).findMeasure(mID));
         }
     }
-    emit resultReady(_data->findService(sID).findMeasure(mID));
 }
 
 /**

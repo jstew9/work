@@ -26,8 +26,7 @@ SOURCES += main.cpp\
     data.cpp \
     filterdata.cpp \
     widgetcomplinechart.cpp \
-    displaywindow.cpp \
-    graphtemplate.cpp
+    displaywindow.cpp
 
 
 HEADERS  += mainwindow.h \
@@ -43,8 +42,7 @@ HEADERS  += mainwindow.h \
     data.h \
     filterdata.h \
     widgetcomplinechart.h \
-    displaywindow.h \
-    graphtemplate.h
+    displaywindow.h
 
 
 FORMS    += mainwindow.ui \

@@ -1,10 +1,11 @@
 /**
   @file widgetcomplinechar.cpp
   @author Alex Clarke, Melanie Imough, Jen Stewart
-  @version 1.0
+  @version 0.1
 
-  @class WidgetCompLineChart
-  @brief Class to display a line graph comparing two measures
+  @section DESCRIPTION
+
+  Class to display a line graph comparing two measures
 
   */
 
@@ -19,11 +20,6 @@
 #define GRAPH_LOW_RATIO 0.85
 #define GRAPH_HIGH_RATIO 1.2
 #define PEN_WIDTH 3
-
-static const QColor COLOUR_LIST[5] = {QColor(255,0,0,255),QColor(0,255,0,255),QColor(0,0,255,255),QColor(255,255,0,255),QColor(255,0,255,255)};
-static const QColor COLOUR_LIST2[5] = {QColor(0,0,255,255),QColor(255,255,0,255),QColor(255,0,0,255),QColor(0,255,0,255),QColor(173,255,47,255)};
-
-
 /**
  * @brief WidgetCompLineChart::WidgetCompLineChart default constructor
  * @param parent
@@ -156,11 +152,12 @@ void WidgetCompLineChart::drawChart()
 {
 
     ui->widgetCompLineChart_2->clearPlottables();
+    srand(time(NULL));
     int j = 0;
     QList<QListWidgetItem*> tempMuniList = ui->listLineChartMunicipality_4->selectedItems();
     for(QList<QListWidgetItem*>::Iterator it = tempMuniList.begin(); it != tempMuniList.end(); ++it) {
         ui->widgetCompLineChart_2->addGraph();
-        QPen tempPen(COLOUR_LIST[j%5]);
+        QPen tempPen(QColor(rand()%255,rand()%255,rand()%255,255));
         tempPen.setWidth(PEN_WIDTH);
         ui->widgetCompLineChart_2->graph(j)->setPen(tempPen);
         ++j;
@@ -168,7 +165,7 @@ void WidgetCompLineChart::drawChart()
     int k = 0;
     for(QList<QListWidgetItem*>::Iterator it = tempMuniList.begin(); it != tempMuniList.end(); ++it) {
         ui->widgetCompLineChart_2->addGraph(ui->widgetCompLineChart_2->xAxis2,ui->widgetCompLineChart_2->yAxis2);
-        QPen tempPen(COLOUR_LIST2[k%5]);
+        QPen tempPen(QColor(rand()%255,rand()%255,rand()%255,255));
         tempPen.setWidth(PEN_WIDTH);
         ui->widgetCompLineChart_2->graph(k+j)->setPen(tempPen);
         ++k;
@@ -213,7 +210,6 @@ void WidgetCompLineChart::drawYear(const int &sel)
         Municipality tempMuni = _meas->findMuni(tempItem->text());
         try {
             ui->widgetCompLineChart_2->graph(i)->addData(_meas->yearRange().at(sel).toInt(),tempMuni.getYear(_meas->yearRange().at(sel)).value());
-            ui->widgetCompLineChart_2->graph(i)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDiamond) );
         } catch(std::string s) {
         }
         ui->widgetCompLineChart_2->graph(i)->setName(tempMuni.name()+ ":" + _meas->id());
@@ -235,7 +231,6 @@ void WidgetCompLineChart::drawYear2(const int &sel,const int &offset)
         Municipality tempMuni = _meas2->findMuni(tempItem->text());
         try {
             ui->widgetCompLineChart_2->graph(i+offset)->addData(_ylist->at(sel).toInt(),tempMuni.getYear(_meas2->yearRange().at(sel)).value());
-            ui->widgetCompLineChart_2->graph(i+offset)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle) );
         } catch(std::string s) {
         }
         ui->widgetCompLineChart_2->graph(i+offset)->setName(tempMuni.name()+ ":" + _meas2->id());

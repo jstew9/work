@@ -1,12 +1,10 @@
 /**
   @file data.cpp
   @author Alex Clarke, Jamie Finnigan
-  @version 1.0
+  @version 0.1
 
-  @class Data
-  @brief Class for the storage of service measure type data
-
-  Records both the sevice types and the name of each service type.
+  @section DESCRIPTION
+  Class for the storage of service measure type data
   */
 
 #include "data.h"
@@ -122,10 +120,7 @@ const QMap<QString, ServiceType> &Data::data()
 {
     return *_serviceList;
 }
-/**
- * Get the list of the names of the ServiceTypes
- * @return the list of the names of the ServiceType
- */
+
 const QMap<QString, QString> &Data::names()
 {
     return *_serviceNameList;
@@ -141,9 +136,45 @@ ServiceType &Data::findService(const QString &key)
         return _serviceList->operator [](key);
     else throw "Item of key: " + key.toStdString() + " not found";
 }
-
 /**
- * @brief Get a service name given a key
+ * Populate Deafult Values
+ */
+/*
+void Data::generateDefaultServices(){
+
+    ServiceType* temps1 = new ServiceType();
+    QString tempk = "FIRE";
+    addServType(tempk, *temps1);
+    _serviceNameList->insert(tempk, "Fire Services");
+
+    ServiceType* temps2 = new ServiceType();
+    tempk = "PLIB";
+    addServType(tempk, *temps2);
+     _serviceNameList->insert(tempk, "Library Services");
+
+    ServiceType* temps3 = new ServiceType();
+    tempk = "PRKS";
+    addServType(tempk, *temps3);
+    _serviceNameList->insert(tempk, "Parks Services");
+
+    ServiceType* temps4 = new ServiceType();
+    tempk = "PLCE";
+    addServType(tempk, *temps4);
+     _serviceNameList->insert(tempk, "Police Services");
+
+    ServiceType* temps5 = new ServiceType();
+    tempk = "SWST";
+    addServType(tempk, *temps5);
+     _serviceNameList->insert(tempk, "Waste Management Services");
+
+    ServiceType* temps6 = new ServiceType();
+    tempk = "WATR";
+    addServType(tempk, *temps6);
+    _serviceNameList->insert(tempk, "Water Services");
+}
+*/
+/**
+ * Get a service name given a key
  * @param key the key
  * @return service name matching the key
  */
@@ -151,12 +182,6 @@ const QString Data::serviceName(const QString &key){
     if(_serviceNameList->contains(key))
     return _serviceNameList->operator [](key);
 }
-/**
- * @brief Data::addServName - Add a new service type name to the data.
- * @param key - the service type's key
- * @param name - the name of the service type
- * @return true if the insertion worked, otherwise false
- */
 
 bool Data::addServName(const QString &key, const QString &name)
 {

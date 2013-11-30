@@ -1,7 +1,7 @@
 /**
  * @file  choosedata.h
  * @author  Melanie Imough, Alex Clarke, Jamie Finnigan
- * @version 1.0
+ * @version 0.1
  *
  * @section DESCRIPTION
  *
@@ -39,8 +39,6 @@ signals:
 public slots:
     void addItem(QString sID, QString measure, QString title);
     void updateMeasure(Measure &m);
-protected:
-    void closeEvent(QCloseEvent *e);
 private slots:
     void on_pushButtonTable_clicked();
     void on_pushButtonBarChart_clicked();
@@ -49,12 +47,15 @@ private slots:
     void getMeasuresForService(QTreeWidgetItem*);
     void parseMeasures(QTreeWidgetItem*);
     void on_pushButtonActiveGraphs_clicked();
+
     void on_treeWidget_itemSelectionChanged();
+
+
+
     void on_chkbox_toggled(bool checked);
+
 private:
    void populateTreeWithServices();
-   void loadState();
-   void saveState();
    Ui::ChooseData *ui;
    DisplayWindow *displayDialog;
    FilterData *_fdata;

@@ -1,7 +1,7 @@
 /**
   @file widgetbarchart.h
   @author Alex Clarke, Melanie Imough
-  @version 1.0
+  @version 0.1
 
   @section DESCRIPTION
 
@@ -29,8 +29,8 @@ public:
 
 private slots:
     void on_pushButtonLoadTable_clicked();
-
     void on_pushButtonSaveTableData_clicked();
+
 
 private:
     void drawYear(const int &sel,const int &column);

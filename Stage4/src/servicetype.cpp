@@ -1,17 +1,11 @@
 /**
   @file servicetype.cpp
   @author Alex Clarke
-  @version 1.0
+  @version 0.1
 
-  @class ServiceType
-  @brief Class storing information about a service type.
+  @section DESCRIPTION
 
-  A service type is a broad area under which sevices are classifed, ie Fire.
-  The information stored is the name of the service area, the id of the service area, and
-  the list of measures included in that service type. For example under the Fire service area,
-  one measure is "Residential Fire Related Injuries per 100,000 Population (Entire Municipality)"
-  and that measure will be stored with all the other Fire measures in a ServiceType object.
-
+  Class Storing information about a service type
 
   */
 
@@ -30,7 +24,7 @@ ServiceType::ServiceType(const QString &id):_measureList(new QMap<QString,Measur
 {
 }
 /**
- * @brief ServiceType::ServiceType Construct a ServiceType with a given id and name
+ * @brief ServiceType::ServiceType Construct a ServiceType of a given id and name
  * @param id the chosen id
  * @param name the chosen name
  */

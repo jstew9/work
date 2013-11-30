@@ -1,13 +1,12 @@
 /**
   @file year.cpp
   @author Alex Clarke
-  @version 1.0
+  @version 0.1
 
-  @class Year
-  @brief Class allowing for the storage and manipulation of measure data petraining to a given city
+  @section DESCRIPTION
 
-  The specific data for a given measure, city, and year is stored in a year object.
-  This object stores only the year and the value of the measure in that city in that year.
+  Class allowing for the storage and manipulation of measure data petraining to a given city
+
   */
 
 #include "year.h"

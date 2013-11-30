@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>../build-CS3307Group3-Desktop-Debug/ombi-prog-logo.png</normaloff>../build-CS3307Group3-Desktop-Debug/ombi-prog-logo.png</iconset>
-  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
     <layout class="QFormLayout" name="formLayout_4">

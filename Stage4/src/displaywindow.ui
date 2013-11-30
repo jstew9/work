@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>OMBI Data Viewer</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>../build-CS3307Group3-Desktop-Debug/ombi-prog-logo.png</normaloff>../build-CS3307Group3-Desktop-Debug/ombi-prog-logo.png</iconset>
-  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">

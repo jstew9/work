@@ -3,8 +3,9 @@
  * @author  Melanie Imough
  * @version 1.0
  *
- * @class MainWindow
- * @brief This class makes the first screen, "welcome" screen, The user can start filtering data by
+ * @section DESCRIPTION
+ *
+ * This class makes the first screen, "welcome" screen, The user can start filtering data by
  * pressing "go" button witch will activate the next screen.
  */
 

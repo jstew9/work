@@ -1,7 +1,7 @@
 /**
   @file data.h
   @author Alex Clarke, Jamie Finnigan
-  @version 1.0
+  @version 0.1
 
   @section DESCRIPTION
   Header for the storage of service measure type data

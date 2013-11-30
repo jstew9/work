@@ -1,10 +1,10 @@
 /**
   @file displaywindow.cpp
   @author Alex Clarke, Melanie Imough
-  @version 1.0
+  @version 0.1
 
-  @class DisplayWindow
-  @brief Class for a generic tabbed data viewing window
+  @section DESCRIPTION
+  Class for a generic tabbed data viewing window
 
   */
 
@@ -21,7 +21,6 @@ DisplayWindow::DisplayWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tabWidget->setTabsClosable(true);
     ui->tabWidget->setMovable(true);
-    this->setWindowModality(Qt::NonModal);
 }
 /**
  * @brief DisplayWindow::~DisplayWindow Deconstructor
@@ -42,8 +41,6 @@ void DisplayWindow::addTab(QWidget *newTab, const QString &name)
     ui->tabWidget->addTab(newTab,name);
     ui->tabWidget->setCurrentIndex(ui->tabWidget->count()-1);
 }
-
-
 /**
  * @brief DisplayWindow::on_tabWidget_tabCloseRequested Remove a tab if you close it
  * @param index

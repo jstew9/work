@@ -1,7 +1,7 @@
 /**
   @file widgetlinechart.h
   @author Alex Clarke, Melanie Imough, Jen Stewart
-  @version 1.0
+  @version 0.1
 
   @section DESCRIPTION
 
@@ -13,6 +13,8 @@
 
 #include <QWidget>
 #include "measure.h"
+#include "qcustomplot.h"
+
 namespace Ui {
 class WidgetLineChart;
 }
@@ -26,13 +28,32 @@ public:
     WidgetLineChart(QWidget *parent, const Measure &meas, const std::pair<double,double> &range);
     ~WidgetLineChart();
     
+    void drawChartDefault();
+
 private slots:
     void on_listLineChartMunicipality_itemSelectionChanged();
     void on_radioButtonMeanAllDataBar_toggled(bool checked);
     void on_pushButtonSaveLineData_clicked();
     void on_pushButtonRefresh_clicked();
-
     void on_listLineChartYears_itemSelectionChanged();
+
+    void titleDoubleClick(QMouseEvent* event, QCPPlotTitle* title);
+    void axisLabelDoubleClick(QCPAxis *axis, QCPAxis::SelectablePart part);
+    void legendDoubleClick(QCPLegend *legend, QCPAbstractLegendItem *item);
+    void selectionChanged();
+    void mousePress();
+    void mouseWheel();
+    void contextMenuRequest(QPoint pos);
+    void selectImageBackground();
+    void selectImageAxisBackground();
+    void changeLegendColor();
+    void changeColorLine();
+    void changeAxisColor();
+    void changeBackgroundColor();
+    void moveLegend();
+
+signals:
+    void plottableClick(QCPAbstractPlottable*,QMouseEvent*);
 
 private:
     void drawChart();
@@ -42,6 +63,7 @@ private:
 
     Ui::WidgetLineChart *ui;
     Measure *_meas; //active measure
+    //QString measName;
     QString _dirname;
     std::pair<double,double> _range;
     int _lowrange; //low range of the data

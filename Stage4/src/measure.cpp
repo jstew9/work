@@ -1,18 +1,11 @@
 /**
   @file measure.cpp
   @author Alex Clarke
-  @version 1.0
+  @version 0.1
 
-  @class Measure
-  @brief Class storing information about a service measure
+  @section DESCRIPTION
 
-  Each service measure has many municipalities for which data was collected
-  over several years.
-  A measure contains a list of municipalities, each of which has years, over
-  which this measure information was recorded.
-
-  The average of the measure over all cities for all years with available data can be obtained.
-  The maximum and minimum value of the measure is also available.
+  Class storing information about a service measure
 
   */
 

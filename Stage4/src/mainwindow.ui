@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../build-CS3307Group3-Desktop-Debug/ombi-prog-logo.png</normaloff>../build-CS3307Group3-Desktop-Debug/ombi-prog-logo.png</iconset>
+    <normaloff>../build-IndiAsn-Desktop-Debug/earth-globe.jpg</normaloff>../build-IndiAsn-Desktop-Debug/earth-globe.jpg</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>

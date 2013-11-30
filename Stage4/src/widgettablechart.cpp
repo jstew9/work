@@ -1,10 +1,11 @@
 /**
   @file widgettablechart.cpp
   @author Alex Clarke, Melanie Imough
-  @version 1.0
+  @version 0.1
 
-  @class WidgetTableChart
-  @brief Class for the display of data in a table
+  @section DESCRIPTION
+
+  Class for the display of data in a table
   */
 
 #include "widgettablechart.h"
@@ -17,6 +18,12 @@
 #include <QFileDialog>
 #include <QTextStream>
 #include <QMessageBox>
+
+#include <string>
+#include <QColorDialog>
+#include <QInputDialog>
+#include <QMenu>
+
 /**
  * Default constructor
  * @param parent

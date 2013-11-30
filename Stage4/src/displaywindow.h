@@ -1,7 +1,7 @@
 /**
   @file displaywindow.h
   @author Alex Clarke, Melanie Imough
-  @version 1.0
+  @version 0.1
 
   @section DESCRIPTION
   Header for a generic tabbed data viewing window
@@ -24,7 +24,6 @@ public:
     explicit DisplayWindow(QWidget *parent = 0);
     ~DisplayWindow();
     void addTab(QWidget *newTab, const QString &name);
-
 
 
 private slots:

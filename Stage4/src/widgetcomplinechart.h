@@ -1,7 +1,7 @@
 /**
   @file widgetcomplinechar.h
   @author Alex Clarke, Melanie Imough, Jen Stewart
-  @version 1.0
+  @version 0.1
 
   @section DESCRIPTION
 
