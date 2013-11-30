@@ -1,0 +1,21 @@
+/*! \mainpage OMBI Viewer 3 Mainpage
+ *
+ * \image html ombi-logo2.png
+ *
+ * \section intro_sec Introduction
+ *
+ * The Ontario Municipal Benchmarking Initiative (OMBI) is a groundbreaking initiative collecting  
+ * data for more than 850 measures across thirty-seven municipal service areas. 
+ * OMBI acts as a source of credible information to assist Council, Senior Management, Staff, and
+ * Citizens to understand how their municipality is performing over time and in relation to others.  
+ * This program assists in organizing and visualizing the OMBI data by providing an intuitive and
+ * simple interface to generate spreadsheets, line graphs, and bar graphs presenting the data.
+ * 
+ * \section authors Authors
+ * This project is part of the Computer Science 3307 course, and was created by Group 3, 
+ * consisting of Hasan Almawi, Alex Clarke, Jamie Finnigan, Melanie Imough, and Jen Stewart. 
+ *  
+ *
+ * \section help_section Help Documentation
+ *
+ */

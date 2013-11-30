@@ -1,0 +1,8 @@
+20/11/2013
+- Bar,Line and Table Graphs Now Scale
+- Values of 0.0 now load properly
+- Averages now are properly calculated in cases when one municipality has no entires for all years
+- Fixed issue with graph y-axis cutting off part of the bar/line
+21/11/2013
+- Values in the Table Graph are no longer editable
+- Graphs now redraw when a year is selected/deselcted
